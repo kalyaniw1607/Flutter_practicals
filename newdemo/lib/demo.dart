@@ -1,5 +1,5 @@
 void fun(){
 
-print('hello');
+print('hello git ');
 
 }
