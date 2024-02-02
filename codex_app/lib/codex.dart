@@ -166,7 +166,9 @@ class codex extends StatelessWidget{
                           ),
                         ]
                       ),
+                    
                     ),
+                  
                   ],
                 ),
                 Row(

@@ -17,3 +17,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+   - images/shahrukh.jpg
+   - images/s2.jpg
+   - images/chennai.jpg
+   - images/jadeja.jpg
+   - images/k2.jpg
+   - images/k1.jpg
