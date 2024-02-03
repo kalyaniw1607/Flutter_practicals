@@ -33,7 +33,7 @@ class insta extends StatelessWidget{
                       
                     ),
                     decoration: BoxDecoration(
-                       
+                       border:Border.all(width: 4,color: Colors.green,style: BorderStyle.solid,),
                         borderRadius: BorderRadius.circular(200.0),
                         //color: Colors.black,
                       ),
@@ -46,7 +46,7 @@ class insta extends StatelessWidget{
                       
                     ),
                     decoration: BoxDecoration(
-                        border:Border.all(width: 3,color: Colors.green,style: BorderStyle.solid,),
+                        border:Border.all(width: 4,color: Color.fromARGB(255, 179, 18, 71),style: BorderStyle.solid,),
                         borderRadius: BorderRadius.circular(200.0),
                         //color: Colors.black,
                       ),
@@ -59,7 +59,7 @@ class insta extends StatelessWidget{
                       
                     ),
                     decoration: BoxDecoration(
-                        
+                        border:Border.all(width: 4,color: Color.fromARGB(255, 179, 18, 71),style: BorderStyle.solid,),
                         borderRadius: BorderRadius.circular(200.0),
                         //color: Colors.black,
                       ),
@@ -72,7 +72,7 @@ class insta extends StatelessWidget{
                       
                     ),
                     decoration: BoxDecoration(
-                        border:Border.all(width: 3,color: Colors.green,style: BorderStyle.solid,),
+                        border:Border.all(width: 4,color: Color.fromARGB(255, 179, 18, 71),style: BorderStyle.solid,),
                         borderRadius: BorderRadius.circular(200.0),
                         //color: Colors.black,
                       ),
@@ -90,8 +90,8 @@ class insta extends StatelessWidget{
                       
                     ),
                     decoration: BoxDecoration(
-                        border:Border.all(width: 3,color: Colors.green,style: BorderStyle.solid,),
-                        borderRadius: BorderRadius.circular(200.0),
+                        border:Border.all(width: 3,color: Color.fromARGB(255, 179, 18, 71),style: BorderStyle.solid,),
+                            borderRadius: BorderRadius.circular(200.0),
                         //color: Colors.black,
                       ),
                    ),
@@ -99,7 +99,12 @@ class insta extends StatelessWidget{
                        child: Text("iamsrk",style: TextStyle(color: Colors.black,fontSize: 20),),
                       margin: EdgeInsets.only(top: 10,left: 8),
                       ),
-                       IconButton(onPressed: (){}, icon:Icon(Icons.verified,color: Colors.blue,),),
+                      Container(
+                        padding: EdgeInsets.only(top: 10),
+                        child:
+                        IconButton(onPressed: (){}, icon:Icon(Icons.verified,color: Colors.blue,),),
+                      ),
+                       
                     SizedBox(width: 155,),
                     IconButton(onPressed: (){}, icon:Icon(Icons.more_vert,color: Colors.black,),),
                   ],
@@ -122,7 +127,7 @@ class insta extends StatelessWidget{
                    IconButton(onPressed: (){}, icon:Icon(Icons.favorite_border_outlined,color: Colors.black,),),
                    IconButton(onPressed: (){}, icon:Icon(Icons.comment_outlined,color: Colors.black,),),
                   IconButton(onPressed: (){}, icon:Icon(Icons.share_sharp,color: Colors.black,),),
-                  SizedBox(width: 200,),
+                  SizedBox(width: 190,),
                    
                     IconButton(onPressed: (){}, icon:Icon(Icons.save_alt,color: Colors.black,) ),
                   
@@ -150,7 +155,7 @@ class insta extends StatelessWidget{
                       
                     ),
                     decoration: BoxDecoration(
-                       // border:Border.all(width: 3,color: Colors.green,style: BorderStyle.solid,),
+                        border:Border.all(width: 3,color: Colors.green,style: BorderStyle.solid,),
                         borderRadius: BorderRadius.circular(200.0),
                         //color: Colors.black,
                       ),
@@ -159,7 +164,7 @@ class insta extends StatelessWidget{
                        child: Text("Kalyaniw1607",style: TextStyle(color: Colors.black,fontSize: 20),),
                       margin: EdgeInsets.only(top: 10,left: 8),
                       ),
-                    SizedBox(width: 155,),
+                    SizedBox(width: 140,),
                     IconButton(onPressed: (){}, icon:Icon(Icons.more_vert,color: Colors.black,),),
                     
                   ],
@@ -182,7 +187,7 @@ class insta extends StatelessWidget{
                    IconButton(onPressed: (){}, icon:Icon(Icons.favorite_border_outlined,color: Colors.black,),),
                    IconButton(onPressed: (){}, icon:Icon(Icons.comment_outlined,color: Colors.black,),),
                   IconButton(onPressed: (){}, icon:Icon(Icons.share_sharp,color: Colors.black,),),
-                  SizedBox(width: 200,),
+                  SizedBox(width: 190,),
                    
                     IconButton(onPressed: (){}, icon:Icon(Icons.save_alt,color: Colors.black,) ),
                   

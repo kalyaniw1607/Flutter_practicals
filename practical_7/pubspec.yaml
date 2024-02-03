@@ -1,4 +1,4 @@
-name: instagram_app
+name: practical_7
 description: A new Flutter project.
 publish_to: 'none'
 version: 0.1.0
@@ -18,9 +18,4 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-   - images/shahrukh.jpg
-   - images/s2.jpg
-   - images/chennai.jpg
-   - images/jadeja.jpg
-   - images/k2.jpg
- 
+  - images/star.jpg
