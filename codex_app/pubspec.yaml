@@ -9,6 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_native_splash: ^2.2.19
+  highlight: ^0.7.0  
+  flutter_highlighting: ^0.9.0+11.8.0
 
 dev_dependencies:
   flutter_test:
@@ -18,10 +21,10 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - images/java.jpg
+    - images/java.png
     - images/csharp.png
-    - images/dart.jpg
-    - images/c.png
+    - images/dart.png
+    - images/c.jpg
     - images/flutter.png
     - images/asp.net.jpg
     - images/spring-framework.png
