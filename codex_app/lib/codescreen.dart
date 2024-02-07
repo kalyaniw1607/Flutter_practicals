@@ -9,33 +9,12 @@ import 'package:flutter_highlighting/themes/github.dart';
 class coding extends StatelessWidget {
    String ? lang;
    String ? info;
-  
-   coding({super.key,this.lang,this.info});
-   String code ='''import 'dart:io';
-
-abstract class parent{
-
-		void education();
-		void marry(){
-			print('kalyani');
-		}
-}
-
-class child extends parent{
-		void education(){
-			print('MCA');
-		}
-
-}
-
-void main(){
-		child c = new child();
-		c.education();
-		c.marry();
-}
-
-''';
-
+    String ? code;
+   
+   coding({super.key,this.lang,this.info,this.code});
+      
+    
+     
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -127,8 +106,7 @@ void main(){
                             child: SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
                               child: HighlightView(
-                              
-                                code,
+                                 code!,
                                 textStyle: TextStyle(fontSize: 20,fontWeight: FontWeight.w300,),
                                  languageId: dart.id,
                                  theme: githubTheme,

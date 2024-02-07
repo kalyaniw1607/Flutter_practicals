@@ -62,6 +62,10 @@ class codex extends StatelessWidget{
                           Navigator.push(context, MaterialPageRoute(builder:(context)=>topics(
                           title1: "Dart",
                           description:"Dart is a client-optimized, garbage-collected, OOP language for creating fast apps that run on any platform. Dart is used to build highperformance web and mobile apps and server and desktop applications.",
+                          topic1 :"Abstract Class",
+                          topic2:"Interface",
+                          topic3:"Mixin",
+                          topic4:"Inheritance",
                           ),
                           ),
                           );
@@ -143,20 +147,36 @@ class codex extends StatelessWidget{
                   ),
                   Row(
                     children: [
-                      Container(
-                        height: 200,
-                        width: 200,
-                        child: Image.asset("./images/flutter.png",fit:BoxFit.fill),
-                        margin: EdgeInsets.only(top:20,left: 30,),
-                        decoration: BoxDecoration(
-                           color: Colors.white,
-                          boxShadow:[
-                            BoxShadow(
-                              color:  Colors.black,
-                              offset: Offset(10, 10),
-                              blurRadius: 10,
-                            ),
-                          ]
+                      InkWell(
+                        onTap:() {
+                          Navigator.push(context, MaterialPageRoute(builder:(context)=>topics(
+                          title1: "Flutter Framework",
+                          description:"Flutter is an open source framework by Google for building beautiful, natively compiled, multi-platform applications from a single codebase..",
+                          topic1 :"Scaffold",
+                          topic2:"StatelessWidget",
+                          topic3:"StatefullWidget",
+                          topic4:"Body",
+                          ),
+                          ),
+                          );
+                          
+                        },
+                        
+                        child: Container(
+                          height: 200,
+                          width: 200,
+                          child: Image.asset("./images/flutter.png",fit:BoxFit.fill),
+                          margin: EdgeInsets.only(top:20,left: 30,),
+                          decoration: BoxDecoration(
+                             color: Colors.white,
+                            boxShadow:[
+                              BoxShadow(
+                                color:  Colors.black,
+                                offset: Offset(10, 10),
+                                blurRadius: 10,
+                              ),
+                            ]
+                          ),
                         ),
                       ),
                       Container(

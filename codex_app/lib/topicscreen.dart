@@ -4,9 +4,12 @@ import 'package:flutter/material.dart';
 
 class topics extends StatelessWidget {
   String ? title1;
-  String ? topicname;
+  String ? topic1;
+  String ? topic2;
+  String ? topic3;
+  String ? topic4;
   String ? description;
-   topics({super.key,this.title1,this.topicname,this.description});
+   topics({super.key,this.title1,this.topic1,this.topic2,this.topic3,this.topic4,this.description});
 
   @override
   Widget build(BuildContext context) {
@@ -58,19 +61,58 @@ class topics extends StatelessWidget {
                 children: [
                   InkWell(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>coding(lang:"Abstract Class",
+                      if("$topic1"=="Abstract Class"){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>coding(lang:"Abstract Class",
                      info:"Abstract class contains method which is abstract method. It only has declaration.It's implementation will be in derived class.It can have normal method as well as abstract method" ,
-                     
-                     ),
+                      code:'''import 'dart:io';
+  abstract class parent{"
+      void education();
+		  void marry(){
+			print('kalyani');
+	  }
+ }
+   class child extends parent{
+	    void education(){
+			print('MCA');
+    }
+ }
+   void main(){
+		  child c = new child();
+		  c.education();
+		   c.marry();
+   }''',),
                       ),
+                    
                       );
+                      }
+                      else{
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>coding(lang:"$topic1",
+                     info:"The Scaffold is a widget in Flutter used to implements the basic material design visual layout structure." ,
+                      code:'''return Scaffold(
+      appBar: AppBar(
+        backgroundColor:Color.fromARGB(255, 74, 140, 247),
+        foregroundColor: Colors.white,
+        title: Text("This is appbar"),
+        actions: [
+          IconButton(onPressed: (){}, icon:Icon(Icons.search),),
+        ],
+      ),
+       body: SizedBox(
+        child: Container(
+          height:300,
+          width:400;
+          
+        ),),
+      );'''),),);
+                      }
+                    
                     },
                     child: Container(
                       height: 50,
                       width: 300,
                        margin: EdgeInsets.only(left: 30,top:30,),
                        padding: EdgeInsets.only(left: 60,top:7),
-                       child: Text("Abstract class",style:TextStyle(fontWeight: FontWeight.w400,fontSize: 32,color: Color.fromARGB(255, 74, 140, 247),fontFamily:"Times New Roman"),),
+                       child: Text("$topic1",style:TextStyle(fontWeight: FontWeight.w400,fontSize: 32,color: Color.fromARGB(255, 74, 140, 247),fontFamily:"Times New Roman"),),
                         decoration: BoxDecoration(
                                color: const Color.fromARGB(167, 187, 222, 251),
                               boxShadow:[
@@ -92,7 +134,7 @@ class topics extends StatelessWidget {
                     width: 300,
                      margin: EdgeInsets.only(left: 30,top:40,),
                      padding: EdgeInsets.only(left: 60,top:7),
-                     child: Text("Interface",style:TextStyle(fontWeight: FontWeight.w400,fontSize: 32,color: Color.fromARGB(255, 74, 140, 247),fontFamily:"Times New Roman"),),
+                     child: Text("$topic2",style:TextStyle(fontWeight: FontWeight.w400,fontSize: 32,color: Color.fromARGB(255, 74, 140, 247),fontFamily:"Times New Roman"),),
                       decoration: BoxDecoration(
                              color: const Color.fromARGB(167, 187, 222, 251),
                             boxShadow:[
@@ -114,7 +156,7 @@ class topics extends StatelessWidget {
                     width: 300,
                      margin: EdgeInsets.only(left: 30,top:40,),
                      padding: EdgeInsets.only(left: 60,top:7),
-                     child: Text("Mixin",style:TextStyle(fontWeight: FontWeight.w400,fontSize: 32,color: Color.fromARGB(255, 74, 140, 247),fontFamily:"Times New Roman"),),
+                     child: Text("$topic3",style:TextStyle(fontWeight: FontWeight.w400,fontSize: 32,color: Color.fromARGB(255, 74, 140, 247),fontFamily:"Times New Roman"),),
                       decoration: BoxDecoration(
                              color: const Color.fromARGB(167, 187, 222, 251),
                             boxShadow:[
@@ -135,7 +177,7 @@ class topics extends StatelessWidget {
                     width: 300,
                      margin: EdgeInsets.only(left: 30,top:40,),
                      padding: EdgeInsets.only(left: 60,top:7),
-                     child: Text("Inheritance",style:TextStyle(fontWeight: FontWeight.w400,fontSize: 32,color: Color.fromARGB(255, 74, 140, 247),fontFamily:"Times New Roman"),),
+                     child: Text("$topic4",style:TextStyle(fontWeight: FontWeight.w400,fontSize: 32,color: Color.fromARGB(255, 74, 140, 247),fontFamily:"Times New Roman"),),
                       decoration: BoxDecoration(
                              color: const Color.fromARGB(167, 187, 222, 251),
                             boxShadow:[
