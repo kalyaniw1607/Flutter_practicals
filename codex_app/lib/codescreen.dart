@@ -54,7 +54,7 @@ class coding extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                    height: 200,
+                    height: 230,
                     width: 300,
                     margin: EdgeInsets.only(left: 30,top:40,),
                     child: Text("$info",style:TextStyle(fontWeight: FontWeight.w400,fontSize: 23,color: Color.fromARGB(255, 128, 69, 46),fontFamily:"Times New Roman"),),

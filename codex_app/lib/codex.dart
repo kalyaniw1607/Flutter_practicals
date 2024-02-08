@@ -23,6 +23,7 @@ class codex extends StatelessWidget{
                  begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 colors: <Color>[
+           
               Colors.blue.shade300,
               Colors.blue.shade200,
               Colors.blue.shade100,

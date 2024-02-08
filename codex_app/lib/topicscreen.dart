@@ -50,7 +50,7 @@ class topics extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                    height: 200,
+                    height: 250,
                     width: 300,
                     margin: EdgeInsets.only(left: 30,top:30,),
                     child: Text("$description",style:TextStyle(fontWeight: FontWeight.w400,fontSize: 23,color: Color.fromARGB(255, 128, 69, 46),fontFamily:"Times New Roman"),),
