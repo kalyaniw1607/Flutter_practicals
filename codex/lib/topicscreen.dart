@@ -48,8 +48,8 @@ class topics extends StatelessWidget {
                 child: Container(
                   height: 50,
                       width: 300,
-                       margin: EdgeInsets.only(left: 30,top:30,),
-                       padding: EdgeInsets.only(left: 60,top:7),
+                       margin: EdgeInsets.only(left: 15,top:30,),
+                       padding: EdgeInsets.only(left: 20,top:7),
                        decoration: BoxDecoration(
                                color: const Color.fromARGB(167, 187, 222, 251),
                               boxShadow:[

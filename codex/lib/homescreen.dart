@@ -6,11 +6,12 @@ import 'package:flutter/material.dart';
 class mainscreen extends StatelessWidget {
    mainscreen({super.key});
    List<String> darttopic=["Inheritance","Abstract Class","Interface","Mixin"];
+    List<String> fluttertopic=["Scaffold","StatelessWidget","StatefullWidget","Body"];
 
- Widget reusablecontainer(BuildContext context,String name,String imgurl){
+ Widget reusablecontainer(BuildContext context,String name,String imgurl,List topiclist){
     return InkWell(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>topics(name:name,topic:darttopic)),);
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>topics(name:name,topic:topiclist)),);
       },
       child: Container(
         
@@ -88,10 +89,10 @@ class mainscreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      reusablecontainer(context,"Dart","./images/dart.png"),
-                      reusablecontainer(context,"C#","./images/csharp.png"),
-                      reusablecontainer(context,"Java","./images/java.png"),
-                      reusablecontainer(context,"C","./images/c.jpg"),
+                      reusablecontainer(context,"Dart","./images/dart.png",darttopic),
+                      reusablecontainer(context,"C#","./images/csharp.png",darttopic),
+                      reusablecontainer(context,"Java","./images/java.png", darttopic),
+                      reusablecontainer(context,"C","./images/c.jpg", darttopic),
                     ],
                   ),
                    Row(
@@ -104,10 +105,10 @@ class mainscreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      reusablecontainer(context,"Flutter","./images/flutter.png"),
-                      reusablecontainer(context,"ASP.Net","./images/asp.net.jpg"),
-                      reusablecontainer(context,"spring","./images/spring-framework.png"),
-                      reusablecontainer(context,"Hibernate","./images/hibernate.png"),
+                      reusablecontainer(context,"Flutter","./images/flutter.png", fluttertopic),
+                      reusablecontainer(context,"ASP.Net","./images/asp.net.jpg", darttopic),
+                      reusablecontainer(context,"spring","./images/spring-framework.png", darttopic),
+                      reusablecontainer(context,"Hibernate","./images/hibernate.png", darttopic),
                     ],
                   ),
                    Row(
@@ -120,10 +121,10 @@ class mainscreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      reusablecontainer(context,"SQL Server","./images/sqlserver.png"),
-                      reusablecontainer(context,"MongoDB","./images/mongodb.png"),
-                      reusablecontainer(context,"MYSQL","./images/MYSQL.png"),
-                      reusablecontainer(context,"MSAccess","./images/Msaccess.png"),
+                      reusablecontainer(context,"SQL Server","./images/sqlserver.png", darttopic),
+                      reusablecontainer(context,"MongoDB","./images/mongodb.png", darttopic),
+                      reusablecontainer(context,"MYSQL","./images/MYSQL.png", darttopic),
+                      reusablecontainer(context,"MSAccess","./images/Msaccess.png", darttopic),
                     ],
                   ),
                   Row(
@@ -136,10 +137,10 @@ class mainscreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      reusablecontainer(context,"Visual Studio Code","./images/ms-visual-studio.jpg"),
-                      reusablecontainer(context,"MongoDB Compass","./images/mongodb-compass.png"),
-                      reusablecontainer(context,"Visual Studio","./images/vscode.jpg"),
-                      reusablecontainer(context,"Git","./images/git.png"),
+                      reusablecontainer(context,"Visual Studio Code","./images/ms-visual-studio.jpg", darttopic),
+                      reusablecontainer(context,"MongoDB Compass","./images/mongodb-compass.png", darttopic),
+                      reusablecontainer(context,"Visual Studio","./images/vscode.jpg", darttopic),
+                      reusablecontainer(context,"Git","./images/git.png", darttopic),
                     ],
                   ),
                 ],
