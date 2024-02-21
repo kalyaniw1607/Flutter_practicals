@@ -78,7 +78,7 @@ class MyWidget extends StatelessWidget {
       },
       child: Container(
         
-                height: 200,
+                           height: 200,
                             width: 200,
                             
                             margin: EdgeInsets.only(top:20,left: 30,bottom: 10,right: 10),

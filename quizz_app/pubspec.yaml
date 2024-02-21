@@ -1,4 +1,4 @@
-name: portfolio
+name: quizz_app
 description: A new Flutter project.
 publish_to: 'none'
 version: 0.1.0
@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_native_splash: ^2.2.19  
 
 dev_dependencies:
   flutter_test:
@@ -18,12 +19,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-  - images/dart.png
-  - images/java.png
-  - images/csharp.png
-  - images/c.jpg
-  - images/MYSQL.png
-  - images/sqlserver.png
-  - images/mongodb.png
-  - images/Msaccess.png
-  - images/profile.jpg
+  - image/firework.gif
+  - image/betterluck.png
