@@ -55,13 +55,22 @@ class _quizdemoState extends State<quizdemo> {
   int  index = 0;
   int selectedansIndex =-1;
   int score = 0;
-  MaterialStatePropertyAll<Color> ?checkans(int buttonindex){
+  int presscount =0;
+  MaterialStatePropertyAll<Color> ?checkans(int buttonindex, int presscount)
+  {
+    
     if(selectedansIndex!=-1){
       if(buttonindex==selectedansIndex){
         if(selectedansIndex==questions[index]["correct"]){
-             score++;
-            return MaterialStatePropertyAll(Colors.green);
-           
+         
+          if(presscount==1){
+              score++;
+            
+          }
+         
+         
+          return MaterialStatePropertyAll(Colors.green);
+               
            }
            else{
             return MaterialStatePropertyAll(Colors.red);
@@ -116,12 +125,13 @@ class _quizdemoState extends State<quizdemo> {
             onPressed: (){
               setState(() {
               selectedansIndex=0;
+             
               });
-              
+               presscount++;
             }, 
           child: Text("A. ${questions[index]["options"][0]}",style: TextStyle(fontSize: 18),),
            style: ButtonStyle(
-            backgroundColor: checkans(0),
+            backgroundColor: checkans(0,presscount),
             fixedSize: MaterialStatePropertyAll(Size(300,35)),
            ),
           ),
@@ -132,11 +142,13 @@ class _quizdemoState extends State<quizdemo> {
             onPressed: (){
               setState(() {
                 selectedansIndex=1;
+                
               });
+               presscount++;
             }, 
           child: Text("B. ${questions[index]["options"][1]}",style: TextStyle(fontSize: 18),),
            style: ButtonStyle(
-            backgroundColor: checkans(1),
+            backgroundColor: checkans(1,presscount),
             fixedSize: MaterialStatePropertyAll(Size(300,35)),
            ),
           ),
@@ -147,11 +159,13 @@ class _quizdemoState extends State<quizdemo> {
             onPressed: (){
               setState(() {
                 selectedansIndex=2;
+                
               });
+               presscount++;
             }, 
           child: Text("C. ${questions[index]["options"][2]}",style: TextStyle(fontSize: 18),),
            style: ButtonStyle(
-            backgroundColor: checkans(2),
+            backgroundColor: checkans(2,presscount),
             fixedSize: MaterialStatePropertyAll(Size(300,35)),
            ),
           ),
@@ -162,11 +176,13 @@ class _quizdemoState extends State<quizdemo> {
             onPressed: (){
               setState(() {
                 selectedansIndex=3;
+               
               });
+               presscount++;
             }, 
           child: Text("D. ${questions[index]["options"][3]}",style: TextStyle(fontSize: 18),),
            style: ButtonStyle(
-            backgroundColor:checkans(3),
+            backgroundColor:checkans(3,presscount),
             fixedSize: MaterialStatePropertyAll(Size(300,35)),
            ),
           ),
@@ -178,7 +194,7 @@ class _quizdemoState extends State<quizdemo> {
           setState(() {
             index++;
             selectedansIndex =-1;
-            
+            presscount=0;
           });
          }
          else{

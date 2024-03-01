@@ -1,6 +1,4 @@
-import 'package:codex/homescreen.dart';
 import 'package:codex/loginpage.dart';
-import 'package:codex/topicscreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +12,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:login(),
+      home: login(),
     );
   }
 }

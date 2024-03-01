@@ -1,0 +1,4 @@
+flutter_native_splash:
+  color: "#FFF0F5"
+  web : true
+  image : "./assets/ic_launcher.png"

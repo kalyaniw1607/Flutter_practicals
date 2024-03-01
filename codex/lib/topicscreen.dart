@@ -1,87 +1,42 @@
-import 'dart:js';
-
 import 'package:codex/codescreen.dart';
 import 'package:flutter/material.dart';
 
-class topics extends StatelessWidget {
-   String ? name;
-   List ? topic;
-   List ? codes;
-   int ? codeindex;
- topics({super.key,this.name,this.topic,this.codes});
-  
-   
+
+class topicscreen extends StatelessWidget {
+   List ? datalist;
+   int?dataindex;
+   topicscreen({super.key,this.datalist,this.dataindex});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
          appBar: AppBar(
         backgroundColor:Color.fromARGB(255, 74, 140, 247),
         foregroundColor: Colors.white,
-        title: Text("$name"),
+        title: Text("${datalist![dataindex!]["subject"]}"),
         actions: [
           IconButton(onPressed: (){}, icon:Icon(Icons.search),),
         ],
       ),
-      body:SizedBox(
-        child: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                 begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                colors: <Color>[
-           
-              Colors.blue.shade300,
-              Colors.blue.shade200,
-              Colors.blue.shade100,
-              Colors.white,
-              Colors.white,
-              Colors.white,
-              Colors.white,
-              Color.fromARGB(41, 135, 1, 97),
-              Color.fromARGB(76, 135, 1, 97),
-              Color.fromARGB(174, 135, 1, 97),
-              ], 
-              ),
-          ),
-          child: ListView.builder(
-            itemCount: topic?.length,
-             
-            
-            itemBuilder:(context, index) {
-              print(index);
-             
-              return Center(
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>codescreen(name: topic![index],codes: codes,codeindex:index )));
-                  },
-                  child: Container(
-                    height: 50,
-                        width: 300,
-                         margin: EdgeInsets.only(left: 15,top:30,),
-                         padding: EdgeInsets.only(left: 20,top:7),
-                         decoration: BoxDecoration(
-                                 color: const Color.fromARGB(167, 187, 222, 251),
-                                boxShadow:[
-                                  BoxShadow(
-                                    color: Color.fromARGB(218, 158, 158, 158),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 10,
-                                  ),
-                                ]
-                              ),
-                    child: Center(child: Text("${topic?[index]}",style:TextStyle(fontWeight: FontWeight.w400,fontSize: 32,color: Color.fromARGB(255, 74, 140, 247),fontFamily:"Times New Roman"),),
-                  ),
-                  ),
+       body: SizedBox(
+           child: ListView.builder(
+            itemCount: datalist![dataindex!]["Topics"].length,
+            itemBuilder: (context, index) {
+              return InkWell(
+                onTap: () {
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Codescreen(datalist: datalist,dataindex: dataindex,)));
+                },
+                child: Container(
+                  height: 100,
+                  width: 300,
+                  color: Colors.blue,
+                  margin: EdgeInsets.all(30),
+                  child: Center(child: Text("${datalist![dataindex!]["Topics"][index]}")),
                 ),
               );
-            
-          },),
-        ),
-      
+            },),
+        
       ),
     );
-        
-    
   }
 }

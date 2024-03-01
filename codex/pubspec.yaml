@@ -10,8 +10,9 @@ dependencies:
   flutter:
     sdk: flutter
   highlight: ^0.7.0  
-  flutter_highlighting: ^0.9.0+11.8.0  
-
+  flutter_highlighting: ^0.9.0+11.8.0 
+  flutter_native_splash: ^2.2.19
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
