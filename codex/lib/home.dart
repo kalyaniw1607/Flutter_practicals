@@ -1,11 +1,14 @@
 
+import 'package:codex/profile.dart';
 import 'package:codex/topicscreen.dart';
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class mainscreen extends StatelessWidget {
   List?datalist;
   int dataindex=0;
-   mainscreen({super.key,this.datalist});
+  String?name;
+   mainscreen({super.key,this.datalist,this.name});
 
     Widget reusablecontainer(BuildContext context,String name,String imgurl,int dataindex){
     return InkWell(
@@ -36,6 +39,7 @@ class mainscreen extends StatelessWidget {
                      
   
    }
+   List cimges=["./images/carousel1.jpg","./images/carousel2.jpg","./images/carousel3.jpg"];
 
   @override
   Widget build(BuildContext context) {
@@ -45,78 +49,156 @@ class mainscreen extends StatelessWidget {
         foregroundColor: Colors.white,
         title: Text("Codex"),
         actions: [
+          IconButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>profile(name:name)));
+          }, icon:Icon(Icons.person),),
           IconButton(onPressed: (){}, icon:Icon(Icons.search),),
         ],
      ),
-     body:SizedBox(
-       child: Container(
+     body:SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+       child: Column(
+         children: [
+           Container(
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-                 begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                colors: <Color>[
-           
-              Colors.blue.shade300,
-              Colors.blue.shade200,
-              Colors.blue.shade100,
-              Colors.white,
-              Colors.white,
-              Colors.white,
-              Colors.white,
-              Color.fromARGB(41, 135, 1, 97),
-              Color.fromARGB(76, 135, 1, 97),
-              Color.fromARGB(174, 135, 1, 97),
-              ], 
-              ),
-       ),
-       child: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                   Container(
-                    child: Text("Languages",style:TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color: Colors.brown),),
-                    margin: EdgeInsets.only(top: 40,left: 30,),
-                  ),
-                ],
-              ),
-              SingleChildScrollView(
+                    gradient: LinearGradient(
+                       begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      colors: <Color>[
+                         Color.fromARGB(78, 68, 137, 255),
+                         Color.fromARGB(78, 68, 137, 255),
+                         Colors.white24,
+                         Colors.white24,
+                         Color.fromARGB(78, 68, 137, 255),
+                         Color.fromARGB(78, 68, 137, 255),
+                     ], 
+                    ),
+             ),
+             
+            child: Container(
+              height: 250,
+              child: CarouselSlider(
+                items: cimges.map(
+                  (Element) => Container(
+                          height: 300,
+                          width: 600,
+                          margin: EdgeInsets.all(10),
+                          color: Colors.grey,
+                          child: Image.asset(Element,fit: BoxFit.cover,),
+                )).toList(), 
+                options: CarouselOptions(
+                  
+                  autoPlay: true,
+                  autoPlayCurve: Curves.bounceIn,
+                  aspectRatio: 16/9,
+                  initialPage: 0,
+                  reverse: false,autoPlayInterval: Duration(seconds: 2),
+                )),
+            ),
+           ),
+            Container(
+               decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                       begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      colors: <Color>[
+                         Color.fromARGB(50, 68, 137, 255),
+                         Color.fromARGB(50, 68, 137, 255),
+                         Colors.white24,
+                         Colors.white24,
+                         Color.fromARGB(50, 68, 137, 255),
+                         Color.fromARGB(50, 68, 137, 255),
+                     ], 
+                    ),
+             ),
+             child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                         Container(
+                          child: Text("Languages",style:TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color: Colors.brown),),
+                          margin: EdgeInsets.only(top: 40,left: 30,),
+                        ),
+                      ],
+                    ),
+                    SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            reusablecontainer(context,"Dart","./images/dart.png",dataindex),
+                            reusablecontainer(context,"C#","./images/csharp.png",dataindex),
+                            reusablecontainer(context,"Java","./images/java.png",dataindex),
+                            //reusablecontainer(context,"C","./images/c.jpg", darttopic,dartcodes),
+                          ],
+                        ),
+                      ),
+                      Row(
+                        children: [
+                           Container(
+                            child: Text("Framework",style:TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color: Colors.brown),),
+                            margin: EdgeInsets.only(top: 40,left: 30,),
+                          ),
+                        ],
+                                     ),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                               children: [
+                               reusablecontainer(context,"Flutter","./images/flutter.png",dataindex+1),
+                               reusablecontainer(context,"ASP.Net","./images/asp.net.jpg",dataindex),
+                               reusablecontainer(context,"spring","./images/spring-framework.png",dataindex),
+                            // reusablecontainer(context,"Hibernate","./images/hibernate.png", darttopic),
+                          ],
+                        ),
+                      ),
+                      Row(
+                  children: [
+                     Container(
+                      child: Text("Database",style:TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color: Colors.brown),),
+                      margin: EdgeInsets.only(top: 40,left: 30,),
+                    ),
+                  ],
+                ),
+                SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      reusablecontainer(context,"Dart","./images/dart.png",dataindex),
-                      reusablecontainer(context,"C#","./images/csharp.png",dataindex),
-                      reusablecontainer(context,"Java","./images/java.png",dataindex),
-                      //reusablecontainer(context,"C","./images/c.jpg", darttopic,dartcodes),
+                      reusablecontainer(context,"SQL Server","./images/sqlserver.png", dataindex),
+                      reusablecontainer(context,"MongoDB","./images/mongodb.png", dataindex),
+                      reusablecontainer(context,"MYSQL","./images/MYSQL.png",dataindex),
+                     // reusablecontainer(context,"MSAccess","./images/Msaccess.png", darttopic),
                     ],
                   ),
                 ),
                 Row(
                   children: [
                      Container(
-                      child: Text("Framework",style:TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color: Colors.brown),),
+                      child: Text("Tools",style:TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color: Colors.brown),),
                       margin: EdgeInsets.only(top: 40,left: 30,),
                     ),
                   ],
-                               ),
+                ),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                         children: [
-                         reusablecontainer(context,"Flutter","./images/flutter.png",dataindex+1),
-                         reusablecontainer(context,"ASP.Net","./images/asp.net.jpg",dataindex),
-                         reusablecontainer(context,"spring","./images/spring-framework.png",dataindex),
-                      // reusablecontainer(context,"Hibernate","./images/hibernate.png", darttopic),
+                    children: [
+                      reusablecontainer(context,"Visual Studio Code","./images/ms-visual-studio.jpg", dataindex),
+                      reusablecontainer(context,"MongoDB Compass","./images/mongodb-compass.png", dataindex),
+                      reusablecontainer(context,"Visual Studio","./images/vscode.jpg", dataindex),
+                     // reusablecontainer(context,"Git","./images/git.png", darttopic),
                     ],
-                  ),
-                ),
-            ],
-        ),
+                  ),),
+                  ],
+              ),
+             ),
+           ),
+         
+           
+         ],
        ),
-     ),
-    
      ),
     );    
   }

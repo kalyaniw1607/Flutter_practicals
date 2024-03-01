@@ -89,20 +89,44 @@ m.display();
             // Display the values of the object
             t.display();
        }'''],
+        "quiz":[
+          {
+              "question":"What is Dart?",
+              "options": ["A programming language","A web development ","A database management "," A hardware device"],
+               "correct": 0
+           },
+            {
+                 "question":"Which of the following is not a feature of Dart?",
+                  "options": ["Type inference","Asynchronous programming","Garbage collection"," Block-level scope"],
+                   "correct": 3
+             },
+              {
+                 "question":"What is the syntax for declaring a variable in Dart?",
+                  "options": ["const variableName;"," let variableName;","var variableName;","int variableName;"],
+                   "correct": 2
+               },
+        ],
         
        },
 
        {
         "subject":"Flutter",
          "Topics":["Scaffold","StatelessWidget","StatefullWidget","Body"],
-         "Code":['''class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}''','''import 'package:flutter/material.dart';
+         "Code":['''Widget build(BuildContext context) {
+return Scaffold(
+	appBar: AppBar(title: const Text('welcome')),
+	body: const Center(
+	child: Text(
+		"Welcome !!!",
+		style: TextStyle(
+		color: Colors.black,
+		fontSize: 40.0,
+		),
+	),
+	),
+);
+}
+''','''import 'package:flutter/material.dart';
 
 void main() {
 runApp(const MyApp());
@@ -141,11 +165,50 @@ Widget build(BuildContext context) {
 	);
 }
 }
-''']
+''','''Widget build(BuildContext context) {
+return Scaffold(
+	appBar: AppBar(title: const Text('GeeksforGeeks')),
+	body: const Center(
+	child: Text(
+		"Welcome to GeeksforGeeks!!!",
+		style: TextStyle(
+		color: Colors.black,
+		fontSize: 40.0,
+		),
+	),
+	),
+	floatingActionButton: FloatingActionButton(
+	elevation: 10.0,
+	child: const Icon(Icons.add),
+	onPressed: () {
+		// action on button press
+	},
+	),
+);
+}
+'''],
+ "quiz":[
+          {
+              "question":"Which programming language is used to build Flutter applications?",
+              "options": ["Kotlin","Dart","Java","Go"],
+               "correct": 1
+           },
+            {
+                 "question":"How many types of widgets are there in Flutter?",
+                  "options": ["4","6","2","8+"],
+                   "correct": 2
+             },
+              {
+                 "question":"Which component allows us to specify the distance between widgets on the screen?",
+                  "options": ["SafeArea","SizedBox","table","AppBar"],
+                   "correct": 1
+               },
+        ],
        }
    ];
  final usernamecontroller = TextEditingController();
  final passwordcontroller = TextEditingController();
+ String name ="";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -161,7 +224,7 @@ Widget build(BuildContext context) {
                     height: 150,
                     width: 150,
                     margin: EdgeInsets.all(30),
-                    child: Image.asset("./images/codex.jpg",fit: BoxFit.fill,),
+                    child: Image.asset("./images/codex.png",fit: BoxFit.fill,),
                   ),
                   Text("welcome to Codex",style: TextStyle(fontSize: 20,fontFamily: "",fontWeight: FontWeight.w700, color: Colors.brown),),
                   SizedBox(height: 30,),
@@ -177,6 +240,7 @@ Widget build(BuildContext context) {
                              ),
                              
                         ),
+                        
                          focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           color: Colors.deepPurple,
@@ -185,6 +249,9 @@ Widget build(BuildContext context) {
                        
                         hintText: "User Name",
                       ),
+                      onChanged: (value) {
+                        name=value;
+                      },
                     ),
                   ),
                    SizedBox(height: 30,),
@@ -213,7 +280,7 @@ Widget build(BuildContext context) {
                     width: 300,
                     height: 50,
                     child: ElevatedButton(onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>mainscreen(datalist:alldata)),);
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>mainscreen(datalist:alldata,name:name)),);
                     }, child: Text("LOGIN"), ),
                    ),
                    Row(
