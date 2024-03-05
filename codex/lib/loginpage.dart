@@ -209,6 +209,7 @@ return Scaffold(
  final usernamecontroller = TextEditingController();
  final passwordcontroller = TextEditingController();
  String name ="";
+ final GlobalKey<FormState> _formkey =GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -230,34 +231,46 @@ return Scaffold(
                   SizedBox(height: 30,),
                   Container(
                     width: 300,
-                    child: TextField(
-                      controller: usernamecontroller,
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                             borderSide: BorderSide( 
-                              
-                              color: Colors.blue.shade900,
-                             ),
-                             
+                    child: Form(
+                      key: _formkey,
+                      child: TextFormField(
+                        controller: usernamecontroller,
+                        decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                               borderSide: BorderSide( 
+                                
+                                color: Colors.blue.shade900,
+                               ),
+                               
+                          ),
+                          
+                           focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.deepPurple,
+                          )
+                         ),
+                         
+                          hintText: "User Name",
+                          
                         ),
-                        
-                         focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.deepPurple,
-                        )
-                       ),
-                       
-                        hintText: "User Name",
+                        validator: (value){
+                          if(value!.isEmpty){
+                            return "Please enter your name";
+                          }
+                          else{
+                            return null;
+                          }
+                        },
+                        onChanged: (value) {
+                          name=value;
+                        },
                       ),
-                      onChanged: (value) {
-                        name=value;
-                      },
                     ),
                   ),
                    SizedBox(height: 30,),
                  Container(
                     width: 300,
-                    child: TextField(
+                    child: TextFormField(
                       controller: passwordcontroller,
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
@@ -273,6 +286,14 @@ return Scaffold(
                        ),
                         hintText: "Password",
                       ),
+                      validator: (value){
+                          if(value!.isEmpty){
+                            return "Please enter your password";
+                          }
+                          else{
+                            return null;
+                          }
+                        },
                     ),
                   ),
                    SizedBox(height: 30,),
@@ -280,7 +301,15 @@ return Scaffold(
                     width: 300,
                     height: 50,
                     child: ElevatedButton(onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>mainscreen(datalist:alldata,name:name)),);
+                        bool loginvalidator = _formkey.currentState!.validate();
+                        if(loginvalidator){
+                          debugPrint("Login Successfull");
+                           Navigator.push(context, MaterialPageRoute(builder: (context)=>mainscreen(datalist:alldata,name:name)),);
+                        }
+                        else{
+                          debugPrint("Login Failed");
+                        }
+                         
                     }, child: Text("LOGIN"), ),
                    ),
                    Row(
